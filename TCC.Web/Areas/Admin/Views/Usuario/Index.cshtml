@@ -1,0 +1,40 @@
+﻿@model PagedList.IPagedList<TCC.Web.Models.UsuarioModelView>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2><i class="fas fa-user-plus fa-fw"></i> Usuários</h2>
+<hr />
+
+@using (Html.BeginForm("Index", "usuario", new { Area = "admin" }, FormMethod.Get)) {
+    <p>
+        Pesquisar por: @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+        <input type="submit" value="Pesquisar" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>@Html.ActionLink("Login", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })</th>
+        <th>@Html.ActionLink("Perfil", "Index", new { Sorting_Order = ViewBag.SortingDate, Filter_Value = ViewBag.FilterValue })</th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Login)</td>
+            <td>@Html.DisplayFor(modelItem => item.PerfilNome)</td>
+            @*<td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                </td>*@
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, Page_No => Url.Action("Index",
+    new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))
+

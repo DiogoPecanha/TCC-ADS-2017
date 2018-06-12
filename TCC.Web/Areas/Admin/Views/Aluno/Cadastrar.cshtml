@@ -1,0 +1,17 @@
+﻿@model TCC.Web.Models.AlunoModelView
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/admin/aluno/cadastro")
+}
+
+<h2><i class="fas fa-address-book fa-fw"></i> Cadastrar Aluno</h2>
+<hr />
+@using (Html.BeginForm("Cadastrar", "Aluno", new { area = "admin" }, FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" })) {
+    Html.RenderPartial("_partialAluno", Model);
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}

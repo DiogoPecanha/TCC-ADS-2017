@@ -1,0 +1,239 @@
+﻿@model TCC.Web.Models.AlunoModelView
+
+@{
+    ViewBag.Title = "MeusDados";
+    Layout = "~/Areas/Aluno/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Meus Dados</h2>
+
+<div>
+    @*<h4>Meus D</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+
+        <dt>
+            Data Criação
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCriacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            Data de Nascimento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DtNasc)
+        </dd>
+
+        <dt>
+            Email Institucional
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailInstitucional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+
+        <dt>
+            Naturalidade Cidade
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NaturalidadeCidade)
+        </dd>
+
+        <dt>
+            Naturalidade UF
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NaturalidadeUF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidade)
+        </dd>
+
+        <dt>
+            Estado Civil
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstCivil)
+        </dd>
+
+        <dt>
+            RG
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdNum)
+        </dd>
+
+        <dt>
+            Órgão Expedidor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdExp)
+        </dd>
+
+        <dt>
+            UF Expedição
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdUF)
+        </dd>
+
+        <dt>
+            Data Emissão
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdDataEmissao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+
+        <dt>
+            Endereço
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResEndereco)
+        </dd>
+
+        <dt>
+            Bairro
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResBairro)
+        </dd>
+
+        <dt>
+            Cidade
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResCidade)
+        </dd>
+
+        <dt>
+            Estado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResEstado)
+        </dd>
+
+        <dt>
+            UF
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResUF)
+        </dd>
+
+        <dt>
+            CEP
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResCEP)
+        </dd>
+
+        <dt>
+            Telefone Residencial
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResTel)
+        </dd>
+
+        <dt>
+            E-mail Pessoal
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMailPessoal)
+        </dd>
+
+        <dt>
+            Celular
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelCelular)
+        </dd>
+
+        <dt>
+            Nome Pai
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomePai)
+        </dd>
+
+        <dt>
+            Nome Mãe
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeMae)
+        </dd>
+
+        <dt>
+            Telefone Trabalho
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelTrabalho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+
+    </dl>
+</div>

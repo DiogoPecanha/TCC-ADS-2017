@@ -1,0 +1,289 @@
+﻿@model TCC.Web.Models.AlunoModelView
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#principais" aria-controls="principais" role="tab" data-toggle="tab">Dados Principais</a></li>
+    <li role="presentation"><a href="#Enderecos" aria-controls="Enderecos" role="tab" data-toggle="tab">Endereço</a></li>
+    <li role="presentation"><a href="#dadosAluno" aria-controls="dadosAluno" role="tab" data-toggle="tab">Dados Aluno</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="principais">
+        <br />
+        <div class="form-group">
+            <label for="Nome" class="col-sm-2 control-label">Nome</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="NomePai" class="col-sm-2 control-label">Nome do Pai</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.NomePai, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="NomeMae" class="col-sm-2 control-label">Nome da Mãe</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.NomeMae, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="DtNasc" class="col-sm-2 control-label">Data de Nascimento</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.DtNasc, new { @class = "form-control date", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Sexo" class="col-sm-2 control-label">Sexo</label>
+            <div class="col-sm-2">
+                <select id="Sexo" name="Sexo" class="form-control">
+                    <option value="">--Selecione--</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="NaturalidadeCidade" class="col-sm-2 control-label">Naturalidade Cidade</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.NaturalidadeCidade, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="NaturalidadeUF" class="col-sm-2 control-label">Naturalidade UF</label>
+            <div class="col-sm-2">
+                <select id="NaturalidadeUF" name="NaturalidadeUF" class="form-control">
+                    <option value="">--Selecione--</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AM">AM</option>
+                    <option value="AP">AP</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MG">MG</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="PR">PR</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SE">SE</option>
+                    <option value="SP">SP</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Nacionalidade" class="col-sm-2 control-label">Nacionalidade</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.Nacionalidade, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="EstCivil" class="col-sm-2 control-label">Estado Civil</label>
+            <div class="col-sm-2">
+                <select id="EstCivil" name="EstCivil" class="form-control">
+                    <option value="">--Selecione--</option>
+                    <option value="Solteiro">Solteiro(a)</option>
+                    <option value="Casado">Casado(a)</option>
+                    <option value="Divorciado">Divorciado(a)</option>
+                    <option value="Viúvo">Viúvo(a)</option>
+                    <option value="Separado">Separado(a)</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="IdNum" class="col-sm-2 control-label">RG</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.IdNum, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="IdExp" class="col-sm-2 control-label">Órgão Exp.</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.IdExp, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="IdUF" class="col-sm-2 control-label">RG UF</label>
+            <div class="col-sm-2">
+                <select id="IdUF" name="IdUF" class="form-control">
+                    <option value="">--Selecione--</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AM">AM</option>
+                    <option value="AP">AP</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MG">MG</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="PR">PR</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SE">SE</option>
+                    <option value="SP">SP</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="IdDataEmissao" class="col-sm-2 control-label">Data de Emissão</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.IdDataEmissao, new { @class = "form-control date", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="CPF" class="col-sm-2 control-label">CPF</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.CPF, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="Enderecos">
+        <br />
+
+        @*<div class="form-group">
+            <label for="ResEstado" class="col-sm-2 control-label">Estado</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.ResEstado, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>*@
+        <div class="form-group">
+            <label for="ResUF" class="col-sm-2 control-label">UF</label>
+            <div class="col-sm-2">
+                <select id="ResUF" name="ResUF" class="form-control">
+                    <option value="">--Selecione--</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AM">AM</option>
+                    <option value="AP">AP</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MG">MG</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="PR">PR</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SE">SE</option>
+                    <option value="SP">SP</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ResCEP" class="col-sm-2 control-label">CEP</label>
+            <div class="col-sm-2">
+                @Html.TextBoxFor(model => model.ResCEP, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ResEndereco" class="col-sm-2 control-label">Logradouro</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.ResEndereco, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ResCidade" class="col-sm-2 control-label">Cidade</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.ResCidade, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ResBairro" class="col-sm-2 control-label">Bairro</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.ResBairro, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="TelCelular" class="col-sm-2 control-label">Celular</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.TelCelular, new { @class = "form-control cel", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="TelTrabalho" class="col-sm-2 control-label">Tel Trabalho</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.TelTrabalho, new { @class = "form-control tel", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ResTel" class="col-sm-2 control-label">Tel Residencial</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.ResTel, new { @class = "form-control tel", @required = "true" })
+            </div>
+        </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="dadosAluno">
+        <br />
+        <div class="form-group">
+            <label for="Login" class="col-sm-2 control-label">Login</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.Login, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Senha" class="col-sm-2 control-label">Senha</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.Senha, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Matricula" class="col-sm-2 control-label">Matrícula</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.Matricula, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="EMailPessoal" class="col-sm-2 control-label">E-mail Pessoal</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.EMailPessoal, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="EmailInstitucional" class="col-sm-2 control-label">E-mail Institucional</label>
+            <div class="col-sm-5">
+                @Html.TextBoxFor(model => model.EmailInstitucional, new { @class = "form-control", @required = "true" })
+            </div>
+        </div>
+    </div>
+</div>
+

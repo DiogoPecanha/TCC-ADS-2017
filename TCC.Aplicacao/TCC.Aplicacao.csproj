@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBDDAB5D-8769-489D-8AD5-B38957B05109}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TCC.Aplicacao</RootNamespace>
+    <AssemblyName>TCC.Aplicacao</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dtos\AlunoDto.cs" />
+    <Compile Include="Dtos\CursoCategoriaDto.cs" />
+    <Compile Include="Dtos\CursoDto.cs" />
+    <Compile Include="Dtos\Dto.cs" />
+    <Compile Include="Dtos\PerfilDto.cs" />
+    <Compile Include="Dtos\PesquisaAvancadaDto.cs" />
+    <Compile Include="Dtos\PesquisaAvancadaSaidaDto.cs" />
+    <Compile Include="Dtos\UsuarioDto.cs" />
+    <Compile Include="Dtos\ViewAlunoDto.cs" />
+    <Compile Include="Dtos\ViewCidadeDto.cs" />
+    <Compile Include="Dtos\ViewUsuarioPefilDto.cs" />
+    <Compile Include="Interfaces\IServicoAplicacao.cs" />
+    <Compile Include="Interfaces\IUsuarioServicoAplicacao.cs" />
+    <Compile Include="Interfaces\IViewAlunoServicoAplicacao.cs" />
+    <Compile Include="Interfaces\IViewCidadeServicoAplicacao.cs" />
+    <Compile Include="Interfaces\IViewUsuarioPerfilServicoAplicacao.cs" />
+    <Compile Include="IQueryableExtension.cs" />
+    <Compile Include="Mapeamentos\AutoMapperConfiguracaoDaAplicacao.cs" />
+    <Compile Include="Mapeamentos\DtoParaEntidadesDeDominioMappingProfile.cs" />
+    <Compile Include="Mapeamentos\EntidadesDeDominioParaDtoMappingProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\ServicoAplicacao.cs" />
+    <Compile Include="Servicos\UsuarioServicoAplicacao.cs" />
+    <Compile Include="Servicos\ViewAlunoServicoAplicacao.cs" />
+    <Compile Include="Servicos\ViewCidadeServicoAplicacao.cs" />
+    <Compile Include="Servicos\ViewUsuarioPerfilServicoAplicacao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TCC.Dominio\TCC.Dominio.csproj">
+      <Project>{A28DF457-880C-41E7-AE80-FFB211E63533}</Project>
+      <Name>TCC.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

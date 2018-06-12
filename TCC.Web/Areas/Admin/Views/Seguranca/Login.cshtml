@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+@model  TCC.Web.Models.LoginViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TCC">
+    <meta name="author" content="Diogo Vinícius">
+    <title>TCC - Módulo Administrador</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- jQuery -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/site")
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">TCC - Módulo Administrador</h3>
+                    </div>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("Login", "Seguranca", FormMethod.Post, new { ReturnUrl = ViewBag.ReturnUrl })) {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Usuário" name="usuario" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Senha" name="senha" type="password" value="">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" id="Perfil" name="Perfil">
+                                        <option value="" selected>--Selecione o perfil--</option>
+                                        <option value="8b7a5555-ef5d-41a8-afd1-4a5fb6948b8d">Administrador</option>
+                                        <option value="a2751561-59ee-4d91-9d6c-8adbb1ba36bd">Operador</option>
+                                    </select>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Guardar dados">Guardar dados
+                                    </label>
+                                </div>
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="Login" />
+                                @*<a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>*@
+                            </fieldset>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+             <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <h5 style="color: #ff0000">@Html.Raw(Model.MensagemLogin)</h5>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
